@@ -21,14 +21,19 @@
 		  	</div>
 		</div>
 	{% empty %}
-		<div class="noproject-wrapper center">
-		 	<h3 class="grey-text">{% if user.is_autheticated %}Sorry, you don't {% else %} This user doesnt {% endif %} have any budget projects yet.</h3>
+		<div class="center">
+			{% if user.is_authenticated  %}
+				<h3>Create a budget and manage your expenses now!</h3>
+			{% else %}
+				<h3>This user doesn't have any budgets yet.</h3>
+			{% endif %}
+		 	{% comment %} <h3 class="grey-text">{% if user.is_autheticated %}Sorry, you don't {% else %} This user doesnt {% endif %} have any budget projects yet.</h3> {% endcomment %}
 		</div>
 	{% endfor %}
   	{% if request.user == profile.user %}
-		<a href="{% url 'add' %}" class="btn-large grey">
+		<a href="{% url 'add' %}" class="btn-large green">
 			<i class="material-icons white-text left">add_circle</i>
-			<span class="bold">Add Budget Projects</span>
+			<span class="bold">Create Budget</span>
 		</a>
 	{% endif %}
 </div>
