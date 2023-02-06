@@ -41,6 +41,14 @@ h1, h6 {
   box-shadow: none;
 }
 
+.margin-bottom {
+  margin-bottom: 150px;
+}
+
+.margin-right {
+  margin-right: 35px;
+}
+
 
 
 /* project list (no projects) */

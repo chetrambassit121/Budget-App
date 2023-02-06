@@ -349,6 +349,7 @@ section {
 @media (min-width: 1280px) {
   .navbar {
     padding: 0;
+    /* background-color: #008374; */
   }
 
   .navbar ul {
