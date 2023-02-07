@@ -15,13 +15,14 @@
                     <h5 class="card-title text-muted centered">Login</h5>
                 <div class="card-body">
                 {% include 'auth/_flash_messages.html'%}
+                <p>Login as John Doe</p>
                 <form action="{%url 'login'%}" method="POST">
                     {% csrf_token%}
                     <div class="form-group">
-                        <input class="form-control form-control-sm" type="text" name="username" value="{{data.username}}" placeholder="Username">
+                        <input class="form-control form-control-sm" type="text" name="username" value="{{data.username}}" placeholder="johndoe1">
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-sm" type="password" name="password" placeholder="Password">
+                        <input class="form-control form-control-sm" type="password" name="password" placeholder="Password123!">
                     </div>
                 <input type="submit" class="btn btn-sm btn-block btn-primary" value="Login">
                 {% comment %} <div class="row">
@@ -48,7 +49,7 @@
         <div class="card mt-4">
             <div class="card-body">
                 <p>
-                Forgot Password? <a href="#">Reset it here</a>
+                Forgot Password? <a href="{% url 'password_reset' %}">Reset it here</a>
                 </p>
             </div>
         </div>
